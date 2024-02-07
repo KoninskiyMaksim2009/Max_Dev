@@ -1,0 +1,86 @@
+@font-face{
+  font-family: 'Space';
+  src: url(Fonts/Font1.ttf);
+}
+@font-face{
+  font-family: 'TextFont';
+  src: url(Fonts/Font2.ttf);
+}
+@font-face{
+  font-family: 'Font3';
+  src: url(Fonts/Font3.ttf);
+}
+html{
+  background-image: url("Images/bg2.jpg");
+  background-size: cover;
+}
+p{
+  font-family: 'Font3';
+  font-size: 24 px;
+}
+h1{
+  font-family: 'Space';
+  text-decoration: underline;
+}
+h3{
+  font-family: 'TextFont';
+}
+a.steam{
+  display: inline-block;
+  background: #2A2451;
+  padding: 12px;
+  border-radius: 128px;
+}
+a.telegram{
+  display: inline-block;
+  background: #2F99FF;
+  padding: 12px;
+  border-radius: 128px;
+}
+a.boosty{
+  display: inline-block;
+  background: #FF8532;
+  padding: 12px;
+  border-radius: 128px;
+}
+a.youtube{
+  display: inline-block;
+  background: #FF3538;
+  padding: 12px;
+  border-radius: 128px;
+}
+
+
+
+@property --progress-value {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes progress {
+ to { --progress-value: 3; }
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Space';
+
+  width: 128px;
+  height: 128px;
+  border-radius: 60%;
+  background: 
+    radial-gradient(closest-side, black 79%, transparent 80% 100%),
+    conic-gradient(#3F3FDA calc(var(--progress-value) * 1%), #22224A 0);
+  animation: progress 2s 1 forwards;
+  font-size: 18px;
+}
+
+.progress-bar::before {
+  counter-reset: percentage var(--progress-value);
+  content: counter(percentage) '%';
+  animation: progress 2s 1 forwards;
+}
+  

@@ -1,0 +1,3 @@
+Hello, JS
+
+This text writen in .txt file
